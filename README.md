@@ -6,7 +6,7 @@
 * iOS 10.3 [安装方法](https://github.com/bumaociyuan/ios-ipa-server/issues/23) Settings > General > About (logically...) > Certificate Trust Settings > Enable Full Trust for Root Certificates
 
 # iOS 11
-* 需要 `ios-ipa-server1.2.0`以上，并先扫描安装CA证书，信任证书方法同iOS 10.3
+* 需要 `ios-ipa-server1.0.4`以上，并先扫描安装CA证书，信任证书方法同iOS 10.3
 
 
 # 支持
@@ -20,12 +20,12 @@
 
 # 安装
 ```
-$ npm install -g ios-ipa-server
+$ npm install -g apk-ipa
 ```
 
 # 用法
 ```
-Usage: ios-ipa-server [option] [dir]
+Usage: apk-ipa [option] [dir]
 
 Options:
 
@@ -38,11 +38,11 @@ Options:
 ## 开启服务
 ```
 $ cd /path/of/ipa
-$ ios-ipa-server
+$ apk-ipa
 
 # or
 
-$ ios-ipa-server /path/of/ipa
+$ apk-ipa /path/of/ipa
 
 
 # open https://ip:port/download on your iphone
@@ -51,7 +51,6 @@ $ ios-ipa-server /path/of/ipa
 ### 关于`ipa`打包方法
 * [Ad-hoc](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/TestingYouriOSApp/TestingYouriOSApp.html)
 * [企业级分发](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/DistributingEnterpriseProgramApps/DistributingEnterpriseProgramApps.html)
-* 普通开发者账号推荐使用[shenzhen](https://github.com/nomad/shenzhen)打包生成`ipa`
 
 ### 安装app
 * 手机使用safari打开`https://ip:port/download`页面
@@ -68,7 +67,7 @@ $ ios-ipa-server /path/of/ipa
 
 ```
 # 下载源码
-$ git clone git@github.com:bumaociyuan/ios-ipa-server.git
+$ git clone git@github.com:Openmingyuers/apk-ipa-server.git
 
 # 安装依赖包
 $ cd ios-ipa-server
@@ -79,16 +78,8 @@ $ npm link
 
 # 运行
 $ cd /path/of/ipa
-$ ios-ipa-server
+$ apk-ipa
 ```
 
-# TODO
-
-- [ ] 支持多语言
-- [ ] 支持[shenzhen](https://github.com/nomad/shenzhen)
-- [ ] 支持上传IPA
-- [ ] iOS 10.3 以上提示 #23 证书信任设置
-
-
 # Lisence
-[MIT](https://github.com/bumaociyuan/zxIpaServer/blob/master/LICENSE.md)
+[MIT](https://github.com/Openmingyuers/apk-ipa-server/blob/master/LICENSE.md)

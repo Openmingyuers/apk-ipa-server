@@ -10,7 +10,7 @@
     <script src="/public/javascripts/qrcode/jquery.min.js"></script>
     <script type="text/javascript" src="/public/javascripts/qrcode/jquery.qrcode.js"></script>
     <script type="text/javascript" src="/public/javascripts/qrcode/qrcode.js"></script>
-    <title>ios ipa server</title>
+    <title>apk ipa server</title>
 </head>
 <body>
     <h3>【微信扫描此页面不能显示】，请点击右上角“在Safari中打开”</h3>
@@ -19,18 +19,31 @@
         <a id='cer' href="https://{{ip}}:{{port}}/cer/myCA.cer">如果出现【无法验证服务器身份】或【无法连接到】，请点击此链接安装证书</a>
     </h3>
     <ul>
-        {{#items}}
+        {{#ipa_items}}
         <li>
         	<img src="{{iconString}}" class="icon" />
         	<div class="info">
-        		<span class="name">{{name}}</span>
+        		<span class="name">{{rpath}}</span>
         		<div class="desc">{{description}}</div>
         		<div class="desc">{{timeString}}</div>
         	</div>
-            <a href="javascript:;" downloadUrl="itms-services://?action=download-manifest&url=https://{{ip}}:{{port}}/plist/{{encodedName}}" class="link">下载</a>
+            <a href="javascript:;" downloadUrl="itms-services://?action=download-manifest&url=https://{{ip}}:{{port}}/plist/{{encodeRPath}}" class="link">下载</a>
         </li>
         <hr/>
-        {{/items}}
+        {{/ipa_items}}
+
+        {{#apk_items}}
+        <li>
+        	<img src="{{iconString}}" class="icon" />
+        	<div class="info">
+        		<span class="name">{{rpath}}</span>
+        		<div class="desc">{{description}}</div>
+        		<div class="desc">{{timeString}}</div>
+        	</div>
+            <a href="javascript:;" downloadUrl="https://{{ip}}:{{port}}/apk/?path={{encodeRPath}}" class="link">下载</a>
+        </li>
+        <hr/>
+        {{/apk_items}}
     </ul>
     <script>
     	var url = location.href;
